@@ -1,4 +1,3 @@
-#Recieve an input from a user for a topic
 import openai
 import asyncio
 import aiohttp
@@ -18,7 +17,6 @@ def generate_outline(topic, keywords, file_name):
 
 
 def generate_blog_plan(outline):
-    #Load the file from Google Drive for context
     read_file(generations, outline)
     messages = [{'role': 'user', 'content': f"I want you to go through this {outline} and convert it into a python list. It should look like this when it is done: ['section 1 title: contents', 'section 2 title: contents', 'section 3 title: contents', 'etc..']. In addition I would like you to rename the title for the Introduction and Conclusion to be something fitting with the theme of the outline and the contents of that section."}]
     return openai.ChatCompletion.create(model="gpt-3.5-turbo", messages=messages, temperature=0.7, max_tokens=3500)
