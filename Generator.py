@@ -1,6 +1,6 @@
 import openai
-import asyncio
-import aiohttp
+# import asyncio
+# import aiohttp
 
 from imports import *
 
